@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <h1>Learn to code by watching others.</h1>
+
+  <p class="message">
+    See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+    but understanding how developers think is invaluable.
+  </p>
+
+  <div class="days">
+    <span class="try">Try it free 7 days</span> then <br>$20/mo. thereafter
+  </div>
+
+  <div class="inputs-container">
+    <input type="text" class="fname js-first-name" placeholder="First Name">
+    <img src="images/icon-error.svg" class="fname-error-icon error-icon" alt="">
+    <span class="fname-error error"></span><br>
+    
+    <input type="text" class="lname js-last-name" placeholder="Last Name"> 
+    <img src="images/icon-error.svg" class="lname-error-icon error-icon" alt="">
+    <span class="lname-error error"></span><br>
+    
+    <input type="email" class="email js-email" placeholder="Email Address">
+    <!-- <span class="example">email@example/com</span> -->
+    <img src="images/icon-error.svg" class="email-error-icon error-icon" alt="">
+    <span class="email-error error"></span><br>
+    
+    <input type="password" class="password js-password" placeholder="Password"> 
+    <img src="images/icon-error.svg" class="password-error-icon error-icon" alt="">
+    <span class="password-error error"></span><br>
+      
+    <button class="claim js-claim">
+      CLAIM YOUR FREE TRIAL
+    </button>
+    
+    <p>
+      By clicking the button, you are agreeing to our
+    <span class="terms-and-services">
+      Terms and Services
+    </span>
+  </p>
+  
+  </div>
+
+
+
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Ashong Abdallah</a>.
+    </p>
+  </footer>
+  
+  <script src="index.js"></script>
+</body>
+</html>

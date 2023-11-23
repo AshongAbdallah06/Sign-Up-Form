@@ -1,0 +1,154 @@
+@@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: hsla(0, 100%, 74%, 0.8);
+  background-image: url("images/bg-intro-mobile.png")
+}
+
+h1 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.message {
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  width: 320px;
+  font-weight: 500;
+}
+
+.days {
+  background-color: hsl(240, 60%, 50%);
+  padding: 10px;
+  width: 320px;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+}
+
+.try {
+  font-weight: 600;
+}
+
+.inputs-container {
+  padding: 15px;
+  width: 320px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 25px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+}
+
+input {
+  background-color: transparent;
+  width: 295px;
+  height: 40px;
+  padding-left: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+input::placeholder {
+  color: rgb(130, 124, 124);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.example {
+  color: red;
+  font-size: 13px;
+  position: absolute;
+  left: 30px;
+  top: 190px;
+  font-weight: 500;
+}
+
+.claim {
+  background-color: hsl(154, 59%, 51%);
+  height: 55px;
+  width: 320px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+p {
+  color: gray;
+  font-size: 13px;
+  text-align: center;
+  
+}
+
+.terms-and-services {
+  color: red;
+  font-weight: 600;
+}
+
+.error {
+  color: red;
+  margin-bottom: 150px;
+  font-size: 10px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  position: absolute;
+  right: 40px;
+}
+
+.border-error {
+  border-color: red;
+}
+
+.fname-error {
+  top: 91px;
+}
+
+.lname-error {
+  top: 157px;
+}
+
+.email-error {
+  top: 225px
+}
+
+.password-error {
+  top: 292px;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  right: 25px;
+  height: 20px
+}
+
+.fname-error-icon {
+  top: 58px;
+}
+
+.lname-error-icon {
+  top: 126px;
+}
+
+.email-error-icon {
+  top: 192px;
+}
+
+.password-error-icon {
+  top: 258px;
+}
