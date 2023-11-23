@@ -21,7 +21,7 @@ function validateFields() {
 
   } else {
 
-    document.querySelector('.fname-error').innerHTML = 'First Name cannot be empty';
+    document.querySelector('.fname-error').innerHTML = 'Invalid First Name';
     document.querySelector('.fname-error-icon').style.display = 'initial';
     firstName.classList.add('border-error')
   }
@@ -35,7 +35,7 @@ function validateFields() {
 
   } else {
 
-  document.querySelector('.lname-error').innerHTML = 'Last Name cannot be empty';
+  document.querySelector('.lname-error').innerHTML = 'Invalid Last Name';
     document.querySelector('.lname-error-icon').style.display = 'initial';
     lastName.classList.add('border-error')
   }
@@ -47,7 +47,7 @@ function validateFields() {
     document.querySelector('.email-error-icon').style.display = 'none';
     email.classList.remove('border-error');
 
-  } else if (!email.value.match(emailRegex)) {
+  } else {
     document.querySelector('.email-error').innerHTML = "Provide a valid email";
     document.querySelector('.email-error-icon').style.display = 'initial';
     email.classList.add('border-error')
