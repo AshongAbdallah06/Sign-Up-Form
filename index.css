@@ -1,154 +1,72 @@
-@@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+let claimButton = document.querySelector('.js-claim');
 
-body {
-  font-family: 'Poppins', sans-serif;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: hsla(0, 100%, 74%, 0.8);
-  background-image: url("images/bg-intro-mobile.png")
-}
+let firstName = document.querySelector('.js-first-name');
+let lastName = document.querySelector('.js-last-name');
+let nameRegex = /^[a-z]+$/i;
 
-h1 {
-  margin-top: 50px;
-  text-align: center;
-}
+let email = document.querySelector('.js-email');
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g;
 
-.message {
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  width: 320px;
-  font-weight: 500;
-}
+let password = document.querySelector('.js-password');
+let passwordRegex = /[0-9A-Za-z]{8,}/;
 
-.days {
-  background-color: hsl(240, 60%, 50%);
-  padding: 10px;
-  width: 320px;
-  text-align: center;
-  margin-top: 50px;
-  border-radius: 10px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
-}
 
-.try {
-  font-weight: 600;
-}
+function validateFields() {
+  // First Name
+  if (firstName.value.match(nameRegex)) {
+    
+    document.querySelector('.fname-error').innerHTML = "";
+    document.querySelector('.fname-error-icon').style.display = 'none';
+    firstName.classList.remove('border-error');
 
-.inputs-container {
-  padding: 15px;
-  width: 320px;
-  background-color: white;
-  margin-top: 20px;
-  border-radius: 10px;
-  position: relative;
-  padding-top: 25px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
-}
+  } else {
 
-input {
-  background-color: transparent;
-  width: 295px;
-  height: 40px;
-  padding-left: 15px;
-  border-radius: 5px;
-  margin-top: 20px;
-  border: 1px solid #ddd;
-}
-
-input::placeholder {
-  color: rgb(130, 124, 124);
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.example {
-  color: red;
-  font-size: 13px;
-  position: absolute;
-  left: 30px;
-  top: 190px;
-  font-weight: 500;
-}
-
-.claim {
-  background-color: hsl(154, 59%, 51%);
-  height: 55px;
-  width: 320px;
-  color: white;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-p {
-  color: gray;
-  font-size: 13px;
-  text-align: center;
+    document.querySelector('.fname-error').innerHTML = 'First Name cannot be empty';
+    document.querySelector('.fname-error-icon').style.display = 'initial';
+    firstName.classList.add('border-error')
+  }
   
+  // Last Name
+  if (lastName.value.match(nameRegex)) {
+    
+    document.querySelector('.lname-error').innerHTML = "";
+    document.querySelector('.lname-error-icon').style.display = 'none';
+    lastName.classList.remove('border-error');
+
+  } else {
+
+  document.querySelector('.lname-error').innerHTML = 'Last Name cannot be empty';
+    document.querySelector('.lname-error-icon').style.display = 'initial';
+    lastName.classList.add('border-error')
+  }
+  
+  // Email
+  if (email.value.match(emailRegex)) {
+    
+    document.querySelector('.email-error').innerHTML = "";
+    document.querySelector('.email-error-icon').style.display = 'none';
+    email.classList.remove('border-error');
+
+  } else if (!email.value.match(emailRegex)) {
+    document.querySelector('.email-error').innerHTML = "Provide a valid email";
+    document.querySelector('.email-error-icon').style.display = 'initial';
+    email.classList.add('border-error')
+  }
+  
+  // Password
+  if (password.value.match(passwordRegex)) {
+    
+    document.querySelector('.password-error').innerHTML = "";
+    document.querySelector('.password-error-icon').style.display = 'none';
+    password.classList.remove('border-error');
+
+  } else {
+    document.querySelector('.password-error').innerHTML = "Provide a valid password";
+    document.querySelector('.password-error-icon').style.display = 'initial';
+    password.classList.add('border-error')
+  }
 }
 
-.terms-and-services {
-  color: red;
-  font-weight: 600;
-}
-
-.error {
-  color: red;
-  margin-bottom: 150px;
-  font-size: 10px;
-  text-align: center;
-  font-style: italic;
-  font-weight: 500;
-  position: absolute;
-  right: 40px;
-}
-
-.border-error {
-  border-color: red;
-}
-
-.fname-error {
-  top: 91px;
-}
-
-.lname-error {
-  top: 157px;
-}
-
-.email-error {
-  top: 225px
-}
-
-.password-error {
-  top: 292px;
-}
-
-.error-icon {
-  display: none;
-  position: absolute;
-  right: 25px;
-  height: 20px
-}
-
-.fname-error-icon {
-  top: 58px;
-}
-
-.lname-error-icon {
-  top: 126px;
-}
-
-.email-error-icon {
-  top: 192px;
-}
-
-.password-error-icon {
-  top: 258px;
-}
+claimButton.addEventListener('click', () => {
+  validateFields();
+})
