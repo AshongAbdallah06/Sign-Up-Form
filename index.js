@@ -14,8 +14,7 @@ let passwordRegex = /[0-9A-Za-z]{8,}/;
 function validateFields() {
   // First Name
   if (firstName.value.match(nameRegex)) {
-    console.log('Working');
-
+    
     document.querySelector('.fname-error').innerHTML = "";
     document.querySelector('.fname-error-icon').style.display = 'none';
     firstName.classList.remove('border-error');
@@ -29,8 +28,7 @@ function validateFields() {
   
   // Last Name
   if (lastName.value.match(nameRegex)) {
-    console.log('Working');
-
+    
     document.querySelector('.lname-error').innerHTML = "";
     document.querySelector('.lname-error-icon').style.display = 'none';
     lastName.classList.remove('border-error');
@@ -44,8 +42,7 @@ function validateFields() {
   
   // Email
   if (email.value.match(emailRegex)) {
-    console.log('Working');
-
+    
     document.querySelector('.email-error').innerHTML = "";
     document.querySelector('.email-error-icon').style.display = 'none';
     email.classList.remove('border-error');
@@ -58,8 +55,7 @@ function validateFields() {
   
   // Password
   if (password.value.match(passwordRegex)) {
-    console.log('Working');
-
+    
     document.querySelector('.password-error').innerHTML = "";
     document.querySelector('.password-error-icon').style.display = 'none';
     password.classList.remove('border-error');
@@ -73,3 +69,4 @@ function validateFields() {
 
 claimButton.addEventListener('click', () => {
   validateFields();
+})
