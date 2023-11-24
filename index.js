@@ -5,68 +5,30 @@ let lastName = document.querySelector('.js-last-name');
 let nameRegex = /^[a-z]+$/i;
 
 let email = document.querySelector('.js-email');
-let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g;
+let emailRegex = /^[^\s@]+@[^\s@0-9]+\.[^\s@0-9]+$/g;
 
 let password = document.querySelector('.js-password');
 let passwordRegex = /[0-9A-Za-z]{8,}/;
 
 
-function validateFields() {
-  // First Name
-  if (firstName.value.match(nameRegex)) {
-    
-    document.querySelector('.fname-error').innerHTML = "";
-    document.querySelector('.fname-error-icon').style.display = 'none';
-    firstName.classList.remove('border-error');
-
+function fields(inputType, regex, errorMessageContainer, errorMessage, errorImageContainer) {
+  if (inputType.value.match(regex)) {
+    errorMessageContainer.innerHTML = '';
+    errorImageContainer.style.display = 'none';
+    inputType.classList.remove('border-error');
   } else {
-
-    document.querySelector('.fname-error').innerHTML = 'Invalid First Name';
-    document.querySelector('.fname-error-icon').style.display = 'initial';
-    firstName.classList.add('border-error')
-  }
-  
-  // Last Name
-  if (lastName.value.match(nameRegex)) {
-    
-    document.querySelector('.lname-error').innerHTML = "";
-    document.querySelector('.lname-error-icon').style.display = 'none';
-    lastName.classList.remove('border-error');
-
-  } else {
-
-  document.querySelector('.lname-error').innerHTML = 'Invalid Last Name';
-    document.querySelector('.lname-error-icon').style.display = 'initial';
-    lastName.classList.add('border-error')
-  }
-  
-  // Email
-  if (email.value.match(emailRegex)) {
-    
-    document.querySelector('.email-error').innerHTML = "";
-    document.querySelector('.email-error-icon').style.display = 'none';
-    email.classList.remove('border-error');
-
-  } else {
-    document.querySelector('.email-error').innerHTML = "Provide a valid email";
-    document.querySelector('.email-error-icon').style.display = 'initial';
-    email.classList.add('border-error')
-  }
-  
-  // Password
-  if (password.value.match(passwordRegex)) {
-    
-    document.querySelector('.password-error').innerHTML = "";
-    document.querySelector('.password-error-icon').style.display = 'none';
-    password.classList.remove('border-error');
-
-  } else {
-    document.querySelector('.password-error').innerHTML = "Provide a valid password";
-    document.querySelector('.password-error-icon').style.display = 'initial';
-    password.classList.add('border-error')
+    errorMessageContainer.innerHTML = errorMessage;
+    errorImageContainer.style.display = 'initial';
+    inputType.classList.add('border-error');
   }
 }
-
 claimButton.addEventListener('click', () => {
-  validateFields();
-})
+  
+  fields(document.querySelector('.js-first-name'), nameRegex, document.querySelector('.fname-error'), 'Invalid First Name', document.querySelector('.fname-error-icon'));
+  
+  fields(document.querySelector('.js-last-name'), nameRegex, document.querySelector('.lname-error'), 'Invalid Last Name', document.querySelector('.lname-error-icon'));
+  
+  fields(document.querySelector('.js-email'), emailRegex, document.querySelector('.email-error'), 'Invalid Email Address', document.querySelector('.email-error-icon'));
+  
+  fields(document.querySelector('.js-password'), passwordRegex, document.querySelector('.password-error'), 'Invalid Password', document.querySelector('.password-error-icon'));
+});
